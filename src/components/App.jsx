@@ -23,7 +23,7 @@ export class App extends Component {
       getImages(this.state.inputValue, this.state.page)
         .then(cards =>
           this.setState(prev => ({
-            card: [...prev.card, ...cards],
+            card: [...prev.card, ...cards.hits],
             isLoading: false,
         })))
         .catch(error => console.log(error));

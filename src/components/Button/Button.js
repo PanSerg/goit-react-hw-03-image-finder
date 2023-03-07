@@ -6,5 +6,5 @@ export const Btn = ({ addPages }) => {
 };
 
 Btn.propTypes = {
-    addPages: PropTypes.array.isRequired
+    addPages: PropTypes.func.isRequired
 }
