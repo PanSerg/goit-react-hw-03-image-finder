@@ -15,7 +15,9 @@ export class App extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.page !== this.state.page) {
+    if (prevState.page !== this.state.page ||
+      prevState.inputValue !== this.state.inputValue) {
+
       this.setState({ isLoading: true });
 
       getImages(this.state.inputValue, this.state.page)
