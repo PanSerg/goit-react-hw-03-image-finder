@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from 'prop-types';
 
-export class ImageGalleryItem extends Comment {
+export class ImageGalleryItem extends Component {
     state = {
         openModal: false,
         src: ''
