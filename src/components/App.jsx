@@ -2,6 +2,7 @@ import { Component } from "react";
 import React from "react";
 import getImages from "services/api";
 import { Searchbar } from "./Searchbar/Searchbar";
+import { ImageGallery } from "./ImageGallery/ImageGallery";
 
 export class App extends Component {
   state = {
@@ -30,11 +31,8 @@ export class App extends Component {
     return (
       <div>
         <Searchbar onSubmit={this.FindImage} />
-        {/* <ImageGallery />
-        <ImageGalleryItem />
-        <Loader />
-        <Button />
-        <Modal /> */}
+        <ImageGallery img={this.state.card} />
+        
       </div>
     );
   };
