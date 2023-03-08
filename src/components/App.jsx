@@ -59,7 +59,7 @@ export class App extends Component {
   render(){
     return (
       <div>
-        <Searchbar onSubmit={this.FindImage} />
+        <Searchbar onSubmit={this.findImage} />
         <ImageGallery img={this.state.card} />
         {this.state.card.length >= 12
           && this.state.isLoading === false && <Btn addPages={this.addPages} />}

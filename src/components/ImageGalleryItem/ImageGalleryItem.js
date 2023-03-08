@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
+import { Modal } from "components/Modal/Modal";
 
 export class ImageGalleryItem extends Component {
     state = {
@@ -20,8 +21,7 @@ export class ImageGalleryItem extends Component {
         return (
           <>
             <li className="gallery-item">
-              <img
-                className="Image-gallery-item"
+              <img className="Image-gallery-item"
                 src={largeImageURL}
                 alt={tags}
                 width="300px"
@@ -29,7 +29,7 @@ export class ImageGalleryItem extends Component {
               />
             </li>
                 {this.state.openModal === true &&
-                    <button closeModal={this.closeModal} srs={this.state.src} />}
+                    <Modal closeModal={this.closeModal} srs={this.state.src} />}
           </>
         );
     }
