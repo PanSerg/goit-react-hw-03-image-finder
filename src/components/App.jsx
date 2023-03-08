@@ -23,28 +23,33 @@ export class App extends Component {
       getImages(this.state.inputValue, this.state.page)
         .then(cards =>
           this.setState(prev => ({
-            card: [...prev.card, ...cards.hits],
-            isLoading: false,
+            card: [...prev.card, ...cards.hits]
+            
         })))
-        .catch(error => console.log(error));
+        .catch(error => console.log(error))
+        .finally({isLoading: false});
     }
   };
 
-
-  FindImage = e => {
-    if (e.search === '') {
-      alert('Enter text')
-    } else {
-      this.setState({ card: [] });
-      this.setState({ page: 1 });
-      this.setState({ isLoading: true });
-      this.setState({ inputValue: e.search });
-
-      getImages(e.search, 1)
-        .then(cards => this.setSate({ card: [...cards], isLoading: false }))
-        .catch(error => console.log(error));
-    }
+ findImage = e => {
+      this.setState({ card: [], page: 1, inputValue: e.search });
+      
   }
+
+  // FindImage = e => {
+  //   if (e.search === '') {
+  //     alert('Enter text')
+  //   } else {
+  //     this.setState({ card: [] });
+  //     this.setState({ page: 1 });
+  //     this.setState({ isLoading: true });
+  //     this.setState({ inputValue: e.search });
+
+  //     getImages(e.search, 1)
+  //       .then(cards => this.setSate({ card: [...cards], isLoading: false }))
+  //       .catch(error => console.log(error));
+  //   }
+  // }
 
   addPages = () => {
     this.setState(prevState => ({ page: prevState.page + 1 }))
