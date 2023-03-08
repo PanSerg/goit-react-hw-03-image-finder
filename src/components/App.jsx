@@ -4,6 +4,7 @@ import getImages from "services/api";
 import { Searchbar } from "./Searchbar/Searchbar";
 import { ImageGallery } from "./ImageGallery/ImageGallery";
 import { Btn } from "./Button/Button";
+import { Loader } from "./Loader/Loader";
 
 export class App extends Component {
   state = {
@@ -62,6 +63,7 @@ export class App extends Component {
         <ImageGallery img={this.state.card} />
         {this.state.card.length >= 12
           && this.state.isLoading === false && <Btn addPages={this.addPages} />}
+        {this.state.isLoading !== false && (<Loader/>)}
       </div>
     );
   };
