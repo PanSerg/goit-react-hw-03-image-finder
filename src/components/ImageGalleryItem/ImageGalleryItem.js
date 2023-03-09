@@ -26,12 +26,12 @@ export class ImageGalleryItem extends Component {
               <img className="ImageGalleryItem-image"
                 src={largeImageURL}
                 alt={tags}
-                width="300px"
+                width="400px"
                 onClick={this.openModal}
               />
             </li>
                 {this.state.openModal === true &&
-                    <Modal closeModal={this.closeModal} srс={this.state.src} />}
+                    <Modal closeModal={this.closeModal} src={this.state.src} />}
           </>
         );
     }

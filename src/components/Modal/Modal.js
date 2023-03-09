@@ -1,6 +1,6 @@
 import { Component } from "react";
 import PropTypes from 'prop-types';
-// import {Overlay, Window } from ''
+import { Overlay, Window } from './Modal.Styled.jsx';
 
 export class Modal extends Component {
   componentDidMount() {
@@ -23,11 +23,11 @@ export class Modal extends Component {
 
   render() {
     return (
-      <div onClick={this.closeModal}>
-        <div>
-          <img src={this.props.src} alt="modalWindow" width="500" />
-        </div>
-      </div>
+      <Overlay onClick={this.closeModal}>
+        <Window>
+          <img src={this.props.src} alt="modalWindow" width="700" />
+        </Window>
+      </Overlay>
     );
   }
 };
