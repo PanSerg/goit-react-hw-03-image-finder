@@ -28,29 +28,13 @@ export class App extends Component {
             
         })))
         .catch(error => console.log(error))
-        .finally({isLoading: false});
+        .finally(()=> this.setState({ isLoading: false}));
     }
   };
 
- findImage = e => {
-      this.setState({ card: [], page: 1, inputValue: e.search });
-      
-  }
-
-  // FindImage = e => {
-  //   if (e.search === '') {
-  //     alert('Enter text')
-  //   } else {
-  //     this.setState({ card: [] });
-  //     this.setState({ page: 1 });
-  //     this.setState({ isLoading: true });
-  //     this.setState({ inputValue: e.search });
-
-  //     getImages(e.search, 1)
-  //       .then(cards => this.setSate({ card: [...cards], isLoading: false }))
-  //       .catch(error => console.log(error));
-  //   }
-  // }
+  findImage = e => {
+    this.setState({ card: [], page: 1, inputValue: e.search });
+  };
 
   addPages = () => {
     this.setState(prevState => ({ page: prevState.page + 1 }))
