@@ -9,11 +9,12 @@ export class ImageGalleryItem extends Component {
         src: ''
     }
 
-    openModal = (e) => {
+  openModal = (e) => {
+      console.log(e.target.src);
         this.setState({ openModal: true, src: e.target.src });
     }
 
-    closeModal = () => {
+  closeModal = () => {
         this.setState({ openModal: false });
     }
 
