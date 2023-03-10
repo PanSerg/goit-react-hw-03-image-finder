@@ -25,8 +25,8 @@ export class App extends Component {
       getImages(this.state.inputValue, this.state.page)
         .then(cards =>
           this.setState(prev => ({
-            card: [...prev.card, ...cards.hits]
-            
+            card: [...prev.card, ...cards.hits],
+          showBtn: this.state.page < Math.ceil(cards.totalHits / 12)
         })))
         .catch(error => console.log(error))
         .finally(()=> this.setState({ isLoading: false}));
