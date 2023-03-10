@@ -13,7 +13,7 @@ export class App extends Component {
     inputValue: null,
     page: 1,
     isLoading: false,
-    onShow: false
+    showBtn: false
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -46,8 +46,7 @@ export class App extends Component {
       <AppStyled>
         <Searchbar onSubmit={this.findImage} />
         <ImageGallery img={this.state.card} />
-        {this.state.card.length >= 12
-          && this.state.isLoading === false && <Btn addPages={this.addPages} />}
+        {this.state.showBtn && this.state.isLoading === false && <Btn addPages={this.addPages} />}
         {this.state.isLoading !== false && (<Loader/>)}
       </AppStyled>
     );
